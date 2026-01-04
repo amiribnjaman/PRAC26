@@ -41,6 +41,28 @@ const twoSum = (nums: number[], target: number): number[] | null => {
     return result;
 }
 
-console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
-console.log(twoSum([3, 2, 4], 6));
+// OPTIMIZED TWO SUM PROBLEM
+// TIME COMPLEXITY O(n) SPACE COMPLEXITY O(n)
+const twoSumOptimized = (nums: number[], target: number): number[] | null => {
+    const numMap: { [key: number]: number } = {}
 
+    let result: number[] = []
+    for (let i = 0; i < nums.length; i++) { 
+        const complement = target - nums[i];
+        if (complement in numMap) {
+            result = [numMap[complement], i];
+        }
+
+        else {
+            numMap[nums[i]] = i;
+        }
+    }
+
+    return result;
+ }
+
+// console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+// console.log(twoSum([3, 2, 4], 6));
+
+console.log(twoSumOptimized([2, 7, 11, 15], 18)); // [0, 1]
+console.log(twoSumOptimized([3, 2, 4, 6,8,9], 14));
