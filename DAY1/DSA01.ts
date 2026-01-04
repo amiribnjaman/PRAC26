@@ -1,4 +1,5 @@
 // A BASIC ALGORITHM TO REVERSE A STRING
+// TIME COMPLEXITY O(n) SPACE COMPLEXITY O(n)
 const reverseString = (str: string): string => {
     let left = 0;
     let right = str.length - 1
@@ -17,5 +18,29 @@ const reverseString = (str: string): string => {
     // OLLEH
 }
 
-console.log(reverseString("HELLO")); // OLLEH
-console.log(reverseString("TypeScript")); // tpircSepyT
+// console.log(reverseString("HELLO")); // OLLEH
+// console.log(reverseString("TypeScript")); // tpircSepyT
+
+
+
+// TWO SUM PROBLEM TIME 
+// COMPLEXITY O(n^2) SPACE COMPLEXITY O(1)
+const twoSum = (nums: number[], target: number): number[] | null => {
+
+    let result: number[] = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        const comlement = target - nums[i];
+        for (let j = 0; j < nums.length; j++) {
+            if (comlement === nums[j]) {
+                result = [j, i]
+            }
+        }
+    }
+
+    return result;
+}
+
+console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+console.log(twoSum([3, 2, 4], 6));
+
