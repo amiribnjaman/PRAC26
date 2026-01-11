@@ -33,3 +33,13 @@ INSERT INTO
     staff (full_name, email, department)
     VALUES 
     ('Alice Brown', 'alice.brown@example.com', 'HR');
+
+
+-- Query to retrieve all records from the employees table
+SELECT * FROM employees;
+
+-- Query to retrieve all records from the staff table
+SELECT * FROM staff;
+
+-- Query to find employees with a salary greater than 20000
+SELECT first_name, last_name FROM employees WHERE salary > 20000;
