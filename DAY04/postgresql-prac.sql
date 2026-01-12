@@ -78,5 +78,40 @@ SELECT * FROM employees ORDER BY salary;
 -- Query to order employees by salary in descending order
 SELECT * FROM employees ORDER BY salary DESC;
 
+-- Query to paginate results: Retrieve 20 records starting from the 10th record
+SELECT * FROM employees LIMIT 20 OFFSET 10;
+
+-- Query to find the minimum and maximum salary in the employees table
+SELECT MIN(salary) AS min_salary, MAX(salary) AS max_salary FROM employees;
 
 
+-- Query to calculate total number of customers, average salary, and total salary
+SELECT COUNT(customer_id) AS total_customers,
+         AVG(salary) AS average_salary,
+         SUM(salary) AS total_salary;
+
+
+
+-- Query to find employees whose first name starts with 'J'
+SELECT * FROM employees WHERE first_name LIKE 'J%';
+
+
+-- Query to find employees whose first name contains the letter 'j'
+SELECT * FROM employees WHERE first_name LIKE '%j%';
+
+-- Query to find employees whose first name contains the letter 'J' (case-insensitive)
+SELECT * FROM employees WHERE first_name ILIKE '%J%';
+
+
+-- Query to get the current date and time
+SELECT NOW() AS current_timestamp;
+
+-- Query to find Department names that are either 'HR' or 'IT'
+SELECT * FROM employees WHERE department IN ('HR', 'IT');
+
+
+-- Query to find Department names that are neither 'HR' nor 'IT'
+SELECT * FROM employees WHERE department NOT IN ('HR', 'IT');
+
+-- Query to find employees in departments where the salary is greater than 50000
+SELECT * FROM employees WHERE department IN (SELECT department FROM employees WHERE salary > 50000);
