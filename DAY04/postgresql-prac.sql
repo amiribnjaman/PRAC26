@@ -65,3 +65,18 @@ DELETE FROM employees WHERE employee_id = 2;
 
 -- Drop the staff table
 DROP TABLE staff;
+
+-- Query to retrieve distinct departments from the employees table
+SELECT DISTINCT department FROM employees;
+
+-- Query to count the number of distinct departments in the employees table
+SELECT COUNT (DISTINCT department) FROM employees;
+
+-- Query to order employees by salary in ascending and descending order
+SELECT * FROM employees ORDER BY salary;
+
+-- Query to order employees by salary in descending order
+SELECT * FROM employees ORDER BY salary DESC;
+
+
+
