@@ -55,3 +55,13 @@ ALTER TABLE employees ADD COLUMN department VARCHAR(50);
 
 -- Update the department for an employee
 UPDATE employees SET salary = 100000 WHERE email = 'alice.brown@example.com';
+
+
+-- Remove the department column from the staff table
+ALTER TABLE staff DROP COLUMN department;
+
+-- Delete an employee record with employee_id = 2
+DELETE FROM employees WHERE employee_id = 2;
+
+-- Drop the staff table
+DROP TABLE staff;
