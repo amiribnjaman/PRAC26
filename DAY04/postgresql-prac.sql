@@ -46,3 +46,12 @@ SELECT * FROM exployees WHERE first_name = 'John';
 
 -- Query to find employees with a salary greater than 20000
 SELECT first_name, last_name FROM employees WHERE salary > 20000;
+
+
+
+-- Add a new column 'department' to the employees table
+ALTER TABLE employees ADD COLUMN department VARCHAR(50);
+
+
+-- Update the department for an employee
+UPDATE employees SET salary = 100000 WHERE email = 'alice.brown@example.com';
